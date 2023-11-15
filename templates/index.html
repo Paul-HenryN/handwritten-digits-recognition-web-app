@@ -7,9 +7,21 @@
       rel="stylesheet"
       href="{{url_for('static',filename='css/main.css')}}"
     />
+    <script src="{{url_for('static',filename='js/main.js')}}" defer></script>
     <title>Document</title>
   </head>
   <body>
-    <p class="text-6xl">Hello, {{name}}</p>
+    <main class="min-h-screen grid place-items-center">
+      <h1>Handwritten digit recognition</h1>
+
+      <canvas
+        id="canvas"
+        class="border-2 bg-black"
+        width="250"
+        height="250"
+      ></canvas>
+
+      <button type="reset" id="btn-reset">Wipe</button>
+    </main>
   </body>
 </html>
