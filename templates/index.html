@@ -7,7 +7,11 @@
       rel="stylesheet"
       href="{{url_for('static',filename='css/main.css')}}"
     />
-    <script src="{{url_for('static',filename='js/main.js')}}" defer></script>
+    <script
+      type="module"
+      src="{{url_for('static',filename='js/main.js')}}"
+      defer
+    ></script>
     <title>Document</title>
   </head>
   <body>
@@ -20,6 +24,9 @@
         width="250"
         height="250"
       ></canvas>
+
+      <p>prediction: <span id="prediction"></span></p>
+      <ul id="probs"></ul>
 
       <button type="reset" id="btn-reset">Wipe</button>
     </main>
