@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/e61dda8ae2.js"
+      crossorigin="anonymous"
+    ></script>
     <link
       rel="stylesheet"
       href="{{url_for('static',filename='css/main.css')}}"
@@ -12,23 +16,75 @@
       src="{{url_for('static',filename='js/main.js')}}"
       defer
     ></script>
-    <title>Document</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/public/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/public/favicon-16x16.png"
+    />
+    <title>Digit Recognizer</title>
   </head>
-  <body>
-    <main class="min-h-screen grid place-items-center">
-      <h1>Handwritten digit recognition</h1>
+
+  <body
+    class="min-h-screen flex flex-col gap-14 items-center justify-center text-center bg-slate-300 py-10"
+  >
+    <main class="flex flex-col lg:flex-row items-center justify-center gap-10">
+      <h1 class="sr-only">Handwritten Digit Recognizer</h1>
 
       <canvas
         id="canvas"
-        class="border-2 bg-black"
+        class="border-2 bg-black rounded-md"
         width="250"
         height="250"
       ></canvas>
 
-      <p>prediction: <span id="prediction"></span></p>
-      <ul id="probs"></ul>
+      <div class="card w-96 bg-base-100 shadow-xl h-[25rem]">
+        <div class="card-body justify-between">
+          <div id="prediction" class="text-4xl font-bold"></div>
 
-      <button type="reset" id="btn-reset">Wipe</button>
+          <div id="placeholder"></div>
+
+          <ul id="probs" class="grid grid-cols-3 gap-2 my-3"></ul>
+
+          <button type="reset" id="btn-reset" class="btn btn-primary">
+            Wipe
+          </button>
+        </div>
+      </div>
     </main>
+
+    <footer class="flex flex-col gap-2 items-center justify-center">
+      <p>Follow me</p>
+
+      <ul class="flex gap-5 text-2xl text-zinc-600">
+        <li>
+          <a href="https://github.com/Paul-HenryN"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/paul-henry-ngankam-ngounou-592194285/"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+        </li>
+        <li>
+          <a href="https://medium.com/@ngpaulhenry"
+            ><i class="fa-brands fa-medium"></i
+          ></a>
+        </li>
+        <li>
+          <a href="https://www.kaggle.com/paulhenryngounou/Home"
+            ><i class="fa-brands fa-kaggle"></i
+          ></a>
+        </li>
+      </ul>
+    </footer>
   </body>
 </html>
