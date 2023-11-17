@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 import numpy as np
 from PIL import Image
 import matplotlib.pyplot as plt
-from src.logistic_regression import model
+from src.classifier import model
 
 app = Flask(__name__)
 
